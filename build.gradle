@@ -1,4 +1,7 @@
+
+// 프로젝트 플러그인 의존성 관리
 buildscript {
+    // ext : 전역변수 선언
     ext {
         springBootVersion = '2.1.9.RELEASE'
     }
@@ -20,12 +23,20 @@ group 'org.example'
 version '1.0-SNAPSHOT'
 sourceCompatibility = 1.8
 
+// 각종 의존성 라이브러리들을 다운받을 원격 저장소 지정
 repositories {
     mavenCentral()
     jcenter()
 }
+/*
+기본적으로 많이 사용하는 것은 mavenCentral,
+하지만 라이브러리 업로드의 번거로움 때문에
+비교적 간단한 jcenter로 이동하는 추세
+특히, jcenter에 올리면 mavenCentral에 자동으로 등록하는 방법으로 업로드를 많이 함
+ */
 
 dependencies {
+    // 특정 버전을 명시하지 않아야지, 위에서 작성한 Springboot 버전을 따라감
     compile('org.springframework.boot:spring-boot-starter-web')
     compile('org.projectlombok:lombok')
     compile('org.springframework.boot:spring-boot-starter-data-jpa')

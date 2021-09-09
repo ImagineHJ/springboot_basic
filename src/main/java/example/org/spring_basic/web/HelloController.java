@@ -13,6 +13,7 @@ public class HelloController {
         return "hello";
     }
 
+    // RequsetParam : API에서 넘긴 파라미터를 가져오는 어노테이션
     @GetMapping("/hello/dto")
     public HelloResponseDto helloDto(@RequestParam("name") String name,
                                      @RequestParam("amount") int amount) {

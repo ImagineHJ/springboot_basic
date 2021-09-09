@@ -37,6 +37,8 @@ public class HelloControllerTest {
         String name = "hello";
         int amount = 1000;
 
+        // param : API 요청 시 파라미터 설정, String 값만 허용
+        // jsonPath : json 응답값을 필드별로 검증할 수 있는 메소드
         mvc.perform(
                 get("/hello/dto")
                         .param("name", name)
